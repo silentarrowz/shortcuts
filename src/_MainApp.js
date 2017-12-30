@@ -8,10 +8,7 @@ import './App.css';
 export default class MainApp extends Component{
 	constructor(){
 		super();
-        this.state={
-            color:'',
-            size:'36px'
-        }
+
    this.handleKeys = this.handleKeys.bind(this);		
 
 	}
@@ -19,7 +16,7 @@ export default class MainApp extends Component{
 	handleKeys(action, event) {
     switch (action) {
       case 'CHANGE_COLOR':
-        this.setState({ color: 'red' });
+        this.setState({ color: 'yellow' });
         break;
       case 'CHANGE_BACK':
         this.setState({ color: '' });
@@ -32,22 +29,23 @@ export default class MainApp extends Component{
         break;
       case 'SHOW_MODAL':
        // this.setState({ showModal: true });
+
+        this.props.showLockFunc(this.state.currentUserUID, this.state.currentUserEmail);
+
         break;
+
+      /*
       case 'HIDE_MODAL':
-        //this.props.hideLockFunc();
+        this.props.hideLockFunc();
         break;
-      }
+        */
 
     }
- 
+  }
 
 	render(){
-        const divStyle = {
-            color:this.state.color,
-            fontSize:this.state.size
-        };
 		return(
-            <Shortcuts
+			 <Shortcuts
             name="MAIN"
             handler={this.handleKeys}
           >
@@ -56,7 +54,7 @@ export default class MainApp extends Component{
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro" style={divStyle} >
+        <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Login/>
