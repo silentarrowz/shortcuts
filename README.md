@@ -1,3 +1,15 @@
+We can use keyboard shortcuts here to change the color and fontsize
+
+first you need to click near the area you want change in
+then clicking on 'a' changes the color to red
+and clicking 'b' changes color back to black
+
+clicking on 'up key' increases font size
+and on 'down key' decreases font size
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
